@@ -1,0 +1,185 @@
+---
+title: "Lesson 1 - Task materials"
+output: 
+  html_document:
+    number_sections: true
+---
+
+
+```{r setup, echo=FALSE, message=FALSE,warning=FALSE}
+library(tidyverse)
+library(ggimage)
+library(here)
+theme_set(theme_nothing())
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+# Become a classifier
+
+Using the cross icon from https://free-icons.github.io (CC-BY 4.0)
+
+## &nbsp;
+
+```{r class1, fig.height=2}
+N_1 <- 6
+data.frame(type = rep(c("A","B"), each = N_1 / 2)) %>%
+  mutate(death = type == "A") %>%
+  arrange(death) %>%
+  mutate(xpos = 1:n() + if_else(death, 1, 0)) %>%
+  ggplot(aes(x = xpos, y = 1)) + geom_point(aes(color = type, fill = type), shape = "square", size = 10) + 
+  geom_image(data = . %>% filter(death), image = here("cross.png"), position = position_nudge(y = 0.5), size = 0.1) + 
+  guides(color = "none", fill = "none") + geom_hline(yintercept = 2, color = "white") +
+  scale_color_brewer(type = "qual") +
+  expand_limits(y = c(-0.2), x= -0.2)
+```
+
+## &nbsp;
+
+```{r class2, fig.height=2, fig.width = 7}
+set.seed(465228)
+N <- 12
+data.frame(type = rep(c("A","B"), each = N / 2), type2 = sample(c("A", "B"), size = N, replace = TRUE)) %>%
+  mutate(death = type == "A" & type2 == "A") %>%
+  arrange(death) %>%
+  mutate(xpos = 1:n() + if_else(death, 1, 0)) %>%
+  ggplot(aes(x = xpos, y = 1)) + geom_point(aes(color = type, fill = type, shape = type2),  size = 10) + 
+  geom_image(data = . %>% filter(death), image = here("cross.png"), position = position_nudge(y = 0.5), size = 0.1) + 
+  guides(color = "none", fill = "none", shape = "none") + geom_hline(yintercept = 2, color = "white") +
+  scale_shape_manual(values = c("square", "triangle")) + 
+  scale_color_brewer(type = "qual") +
+  expand_limits(y = c(-0.2), x= -0.2)
+```
+
+## &nbsp;
+
+```{r class3, fig.height=2, fig.width = 7}
+set.seed(4855622)
+N <- 12
+data.frame(type = rep(c("A","B"), each = N / 2), type2 = sample(c("A", "B"), size = N, replace = TRUE)) %>%
+  mutate(death = xor(type == "A", type2 == "A")) %>%
+  arrange(death) %>%
+  mutate(xpos = 1:n() + if_else(death, 1, 0)) %>%
+  ggplot(aes(x = xpos, y = 1)) + geom_point(aes(color = type, fill = type, shape = type2),  size = 10) + 
+  geom_image(data = . %>% filter(death), image = here("cross.png"), position = position_nudge(y = 0.5), size = 0.1) + 
+  guides(color = "none", fill = "none", shape = "none") + geom_hline(yintercept = 2, color = "white") +
+  scale_shape_manual(values = c("square", "triangle")) + 
+  scale_color_brewer(type = "qual") +
+  expand_limits(y = c(-0.2), x= -0.2)
+```
+
+## &nbsp;
+
+```{r class4, fig.height=2, fig.width = 7}
+set.seed(6658455)
+N <- 12
+data.frame(type = rep(c("A","B"), each = N / 2), type2 = sample(c("A", "B"), size = N, replace = TRUE), 
+           type3 = sample(c("A", "B"), size = N, replace = TRUE), type4 = sample(c("A", "B"), size = N, replace = TRUE)) %>%
+  mutate(death = type3 == "A" | type2 == "B") %>%
+  arrange(death) %>%
+  mutate(xpos = 1:n() + if_else(death, 1, 0)) %>%
+  ggplot(aes(x = xpos, y = 1)) + geom_point(aes(color = type, fill = type, shape = interaction(type2, type3), size = type4)) + 
+  geom_image(data = . %>% filter(death), image = here("cross.png"), position = position_nudge(y = 0.5), size = 0.1) + 
+  guides(color = "none", fill = "none", shape = "none", size = "none") + geom_hline(yintercept = 2, color = "white") +
+  scale_shape_manual(values = c(0, 2, 15, 17)) + 
+  scale_size_manual(values = c(5,10)) +
+  scale_color_brewer(type = "qual") +
+  expand_limits(y = c(-0.2), x= -0.2)
+```
+
+## &nbsp;
+
+```{r class5, fig.height=2, fig.width = 7}
+set.seed(6658455)
+N <- 6
+dd5 <- data.frame(type = rep(c("A","B"), each = N / 2), type2 = sample(c("A", "B"), size = N, replace = TRUE), 
+           type3 = sample(c("A", "B"), size = N, replace = TRUE), type4 = sample(c("A", "B"), size = N, replace = TRUE)) 
+dd5 %>%
+  mutate(death = (type3 == "A" | type2 == "B") & type4 == "B") %>%
+  arrange(death) %>%
+  mutate(xpos = 1:n() + if_else(death, 1, 0)) %>%
+  ggplot(aes(x = xpos, y = 1)) + geom_point(aes(color = type, fill = type, shape = interaction(type2, type3), size = type4)) + 
+  geom_image(data = . %>% filter(death), image = here("cross.png"), position = position_nudge(y = 0.5), size = 0.1) + 
+  guides(color = "none", fill = "none", shape = "none", size = "none") + geom_hline(yintercept = 2, color = "white") +
+  scale_shape_manual(values = c(0, 2, 15, 17)) + 
+  scale_size_manual(values = c(5,10)) +
+  scale_color_brewer(type = "qual") +
+  expand_limits(y = c(-0.2), x= -0.2)
+```
+
+```{r class5-extra, fig.height=4, fig.width = 7, include = FALSE}
+set.seed(45655)
+N <- 6
+dd5extra <- rbind(dd5 %>% mutate(y = 1),
+                  data.frame(type = rep(c("A","B"), each = N / 2), type2 = sample(c("A", "B"), size = N, replace = TRUE), 
+           type3 = sample(c("A", "B"), size = N, replace = TRUE), type4 = sample(c("A", "B"), size = N, replace = TRUE), y = 0)) 
+p <- dd5extra %>%
+  mutate(death = (type3 == "A" | type2 == "B") & type4 == "B") %>%
+  arrange(death) %>%
+  group_by(y) %>%
+  mutate(xpos = 1:n() + if_else(death, 1, 0)) %>%
+  ggplot(aes(x = xpos, y = y)) + geom_point(aes(color = type, fill = type, shape = interaction(type2, type3), size = type4)) + 
+  geom_image(data = . %>% filter(death), image = here("cross.png"), position = position_nudge(y = 0.5), size = 0.05) + 
+  guides(color = "none", fill = "none", shape = "none", size = "none") + geom_hline(yintercept = 2, color = "white") +
+  scale_shape_manual(values = c(0, 2, 15, 17)) + 
+  scale_size_manual(values = c(5,10)) +
+  scale_color_brewer(type = "qual") +
+  expand_limits(y = c(-1.2), x= -0.2)
+
+p
+ggsave(p, filename = here("docs/lesson1-tasks_files/figure-html/class5-extra.png"), height = 4, width = 7)
+```
+
+
+
+# Perceptron
+
+https://codepen.io/bagrounds/full/wdqypY
+
+- Remember to mix classes!
+- Keep adding points until roughly learning rate = 0.1
+
+## Easy target
+
+```{r}
+set.seed(452223)
+N <- 100
+data.frame(x = rnorm(N), y = rnorm(N)) %>%
+  mutate(type = x > -y) %>%
+  ggplot(aes(x = x, y = y, color = type)) + 
+  scale_color_manual(values = c("red", "darkgreen")) + geom_point() +
+  guides(color = "none")
+```
+
+## Soft target
+
+```{r}
+N <- 100
+data.frame(x = rnorm(N), y = rnorm(N)) %>%
+  mutate(type = rbinom(N, size = 1, prob = plogis(3 * (x - y)))) %>%
+  ggplot(aes(x = x, y = y, color = factor(type))) + 
+  scale_color_manual(values = c("red", "darkgreen")) + geom_point() +
+  guides(color = "none")
+```
+
+
+## Hard target
+
+```{r}
+set.seed(3124855)
+N <- 100
+data.frame(x = rnorm(N), y = rnorm(N)) %>%
+  mutate(type = x > 0 & y > 0 | x < 0 & y < 0) %>%
+  ggplot(aes(x = x, y = y, color = type)) + 
+  scale_color_manual(values = c("red", "darkgreen")) + geom_point() +
+  guides(color = "none")
+```
+
+
+# Fool a classifier
+
+https://people.ischool.berkeley.edu/~nick/aaronson-oracle/
+
+
+
+
