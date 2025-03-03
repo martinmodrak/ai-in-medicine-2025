@@ -47,6 +47,7 @@ output: html_document
    - Autoencoders
       - Semi supervised learning!
    - Convolution
+   - Data augmentation
+   - Dropout (regularization more broadly)
    - Word embeddings
 
-## Notes for next le

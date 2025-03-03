@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Lesson 6 - Task materials</title>
+
+<script src="site_libs/header-attrs-2.26/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Introduction to AI in medicine - 2025 course</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="lesson1-tasks.html">Lesson 1 - Tasks</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Lesson 6 - Task materials</h1>
+
+</div>
+
+
+<div id="download-data-for-lesson" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Download data for
+lesson</h1>
+<ul>
+<li>Download everything from <a href="http://195.113.43.46:3388/"
+class="uri">http://195.113.43.46:3388/</a>
+<ul>
+<li>This includes materials from previous lessons</li>
+<li>File sources (for access from outside):
+<ul>
+<li>Same as previous lesson:
+<ul>
+<li>QuPath: <a
+href="https://github.com/qupath/qupath/releases/download/v0.5.1/QuPath-v0.5.1-Windows.zip"
+class="uri">https://github.com/qupath/qupath/releases/download/v0.5.1/QuPath-v0.5.1-Windows.zip</a></li>
+<li>Ki67 Slide 1: <a
+href="https://openslide.cs.cmu.edu/download/openslide-testdata/Hamamatsu/OS-2.ndpi"
+class="uri">https://openslide.cs.cmu.edu/download/openslide-testdata/Hamamatsu/OS-2.ndpi</a></li>
+</ul></li>
+<li>New for this lesson:
+<ul>
+<li>Lung cancer samples stained for MAGEA4 <a
+href="https://www.ebi.ac.uk/biostudies/files/S-BIAD453/MAGEA4/MAGEA4_(CAB040535)_25000_BOMI2_slide1.svs"
+class="uri">https://www.ebi.ac.uk/biostudies/files/S-BIAD453/MAGEA4/MAGEA4_(CAB040535)_25000_BOMI2_slide1.svs</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Save to a temporary folder (e.g. on Desktop)</li>
+</ul>
+</div>
+<div id="unpack-and-run-qupath" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Unpack and run
+QuPath</h1>
+</div>
+<div id="train-a-classifier-together" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Train a classifier
+together</h1>
+<p>Following <a
+href="https://qupath.readthedocs.io/en/0.5/docs/tutorials/cell_classification.html"
+class="uri">https://qupath.readthedocs.io/en/0.5/docs/tutorials/cell_classification.html</a></p>
+<ul>
+<li>Open OS-2.ndpi</li>
+<li>Detect cells</li>
+<li>Measure -&gt; show measurements maps
+<ul>
+<li>Nucleus/cell area ratio (filter!)</li>
+<li>Adjust max!</li>
+</ul></li>
+<li>Analyze -&gt; Calculate features -&gt; Add smoothed features</li>
+<li>Annotate regions</li>
+<li>Classify -&gt; Object classification -&gt; Train object classifier
+<ul>
+<li>Live update</li>
+</ul></li>
+<li>Classify ‣ Object classification ‣ Set cell intensity
+classifications.</li>
+</ul>
+</div>
+<div id="final-task-for-credit" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Final task (for
+credit)</h1>
+<p><strong>Important:</strong> Start with creating a new project. This
+will let you send the results needed to get credit.</p>
+<p>Evaluating the presence of cancer-testis antigens in multiple tissue
+samples.</p>
+<p>The original study is at <a
+href="https://europepmc.org/article/MED/37341056#mol213474-sec-0007"
+class="uri">https://europepmc.org/article/MED/37341056#mol213474-sec-0007</a>
+(for interest only, not needed for the task)</p>
+<p>Import file <code>MAGEA4_(CAB040535)_25000_BOMI2_slide1.svs</code>
+into the QuPath project (drag onto the window or File -&gt; Open).</p>
+<p>There are many samples in the same file, we will focus on the
+top-left cores (the first 4 in the first row).</p>
+<p>Run cell detection for a couple areas. The default settings will tend
+to detect too many cells due to the relatively low resolution of the
+image. You will want to increase smoothing via “Median filter radius”
+and “Sigma” options. You may also need to change the “Background radius”
+setting to allow for larger cells.</p>
+<p>Once you are happy with the result, store (e.g. screenshot, or just
+write down) your final cell detection parameters!</p>
+<p>Train a classifier to distinguish between the two cell populations
+shown below - you can use Positive/Negative classes (or add your own in
+the Annotations card in the left pane and the “…” button below the class
+list).</p>
+<p><img src="populations-final-task.png" /></p>
+<p>Save the classifier.</p>
+<p>To get credit at the lesson, show your results to lecturer. Outside
+of the class, send: your cell detection parameters (screenshot is fine)
+and the classifier file (found under
+<code>your-project-directory\classifiers\object_classifiers</code>) to
+<a href="mailto:martin.modrak@lfmotol.cuni.cz"
+class="email">martin.modrak@lfmotol.cuni.cz</a></p>
+<!-- 
+Note to self: evaluate on 
+Slide 1: 
+   - Top 4, Left - 2
+   - Bottom - 3, LEft-
+Slide 2:
+  - Left 4, Top - 2
+  - Top 1, Right - 4 ( - 3without spaces)
+  - Bottom -3, Left - 5 (-3 without spaces)
+-->
+</div>
+<div id="bonus-tasks" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Bonus tasks</h1>
+<p>Detect cell on whole patches and calculate positive/negative-ly
+stained proportion in each cell-type.</p>
+<p>Find other populations to classify in different types of samples.</p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

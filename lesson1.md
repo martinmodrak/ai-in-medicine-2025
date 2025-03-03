@@ -36,8 +36,6 @@ output: html_document
 
 ## A look into History 
 
-__Tato kapitola nakonec nebyla odpřednášena, jen jsme si pohráli s perceptronem__
-
 - Overall, the Wiki for [history of AI](https://en.wikipedia.org/wiki/History_of_artificial_intelligence) is a pretty good starting point
 - Search and symbols (Cca 1950 - 1974)
   - 1965: "machines will be capable, within twenty years, of doing any work a man can do." H. A. Simon
@@ -52,6 +50,9 @@ __Tato kapitola nakonec nebyla odpřednášena, jen jsme si pohráli s perceptro
   - Early attempts (1943 - 60s)
     - [Perceptron](https://en.wikipedia.org/wiki/Perceptron) 
     - Perceptron task!
+      - Does very simple things
+      - Learns only from error
+      - Decreasing learning rate
   - First revival (1980s)
     - Hebb rule, [Hopfield network](https://en.wikipedia.org/wiki/Hopfield_network)
     - Backpropagation
