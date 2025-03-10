@@ -6,7 +6,11 @@ output:
 ---
 
 
-# Fitting and overfitting
+# Task 1: Neural network training
+
+Open the [neural network demo](convnet_demo.html)
+
+# Task 2: Fitting and overfitting
 
 We will use the demo app at https://codepen.io/oscarsaharoy/full/eYggrme
 
@@ -109,3 +113,4 @@ Paste the following as "points":
 - Now do the same for polynomial or order 2 and then for order 1 (linear)
   - Which of the points produces the biggest change in fit when removed now?
 - Which of the fits seems to generalize best?
+

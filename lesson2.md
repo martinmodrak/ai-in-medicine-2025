@@ -3,8 +3,20 @@ title: "Lesson 2 - Machine learning, validation, overfitting"
 output: html_document
 ---
 
-- Review last time:
-  - Perceptron (we'll get there)
+## Neural networks
+
+- Neural network is "just" another function
+  - Yo mama is "just" another function
+- Refresh perceptron, backpropagation
+- [Task 1](lesson2-tasks.html)
+- Modern ideas for neural networks
+   - [ReLU](https://en.wikipedia.org/wiki/Rectifier_(neural_networks))
+   - [Autoencoders](https://en.wikipedia.org/wiki/Autoencoder)
+      - [Semi supervised learning](https://en.wikipedia.org/wiki/Weak_supervision#Semi-supervised_learning)!
+   - [Convolution](https://en.wikipedia.org/wiki/Convolutional_neural_network)
+   - [Data augmentation](https://en.wikipedia.org/wiki/Data_augmentation)
+   - [Dropout](https://en.wikipedia.org/w/index.php?title=Dropout_(neural_networks)&redirect=no) (regularization more broadly)
+
 
 ## Validation
 
@@ -27,27 +39,4 @@ output: html_document
   - External validation
 - Back to simple functions
   - Refresher: lines, polynomials
-- Task 1
-
-## Neural networks
-
-- Neural network is "just" another function
-  - Yo mama is "just" another function
-- Refresh perceptron (1940s)
-- First revival (1980s)
-  - Hebb rule, [Hopfield network](https://en.wikipedia.org/wiki/Hopfield_network)
-  - Backpropagation
-    - Biologically questionable, but see e.g. [Song et al. 2020](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7610561/)
-  - 3 layers are enough?!
-- Bright future
-   - Deep learning (~2011)
-   - GPU
-- Modern ideas for neural networks
-   - ReLU
-   - Autoencoders
-      - Semi supervised learning!
-   - Convolution
-   - Data augmentation
-   - Dropout (regularization more broadly)
-   - Word embeddings
-
+- [Task 2](lesson2-tasks.html)
