@@ -6,11 +6,14 @@ output:
 ---
 
 
-# Task 1: Neural network training
+# Neural network training
 
 Open the [neural network demo](convnet_demo.html)
 
-# Task 2: Fitting and overfitting
+1. Add points of various colours (Click vs. Shift + Click), see how it learns
+2. Find a pattern that is "nice" but that cannot be learned.
+
+# Fitting and overfitting
 
 We will use the demo app at https://codepen.io/oscarsaharoy/full/eYggrme
 
