@@ -11,7 +11,7 @@
 
 
 
-<title>Lesson 2 - Task materials</title>
+<title>Lesson 2 - Machine learning, validation, overfitting</title>
 
 <script src="site_libs/header-attrs-2.26/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -246,7 +246,7 @@ $(document).ready(function () {
   <a href="index.html">Home</a>
 </li>
 <li>
-  <a href="lesson2-tasks.html">Lesson 2 - Tasks</a>
+  <a href="ml_validation-tasks.html">Lesson 2 - Tasks</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -260,133 +260,81 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Lesson 2 - Task materials</h1>
-
-</div>
-
-
-<div id="task-1-neural-network-training" class="section level1"
-number="1">
-<h1><span class="header-section-number">1</span> Task 1: Neural network
-training</h1>
-<p>Open the <a href="convnet_demo.html">neural network demo</a></p>
-</div>
-<div id="task-2-fitting-and-overfitting" class="section level1"
-number="2">
-<h1><span class="header-section-number">2</span> Task 2: Fitting and
+<h1 class="title toc-ignore">Lesson 2 - Machine learning, validation,
 overfitting</h1>
-<p>We will use the demo app at <a
-href="https://codepen.io/oscarsaharoy/full/eYggrme"
-class="uri">https://codepen.io/oscarsaharoy/full/eYggrme</a></p>
-<p>The app tries to fit a function to data points you entered.</p>
-<p>You may:</p>
-<ul>
-<li>Click on empty space to add a point</li>
-<li>Click on a point to remove a point</li>
-<li>Drag points to change their position</li>
-<li>Change the type of fit (we will focus on linear/polynomial)</li>
-</ul>
-<div id="when-line-is-not-enough" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> When line is not
-enough</h2>
-<ul>
-<li>Start with the default “linear” fit and default dataset.</li>
-<li>Add/move a couple points, until you think the data is not well fit
-with a line.</li>
-<li>Switch to “polynomial” fit (keep the default order of the
-polynomial)</li>
-<li>Has the fit improved?</li>
-<li>Try moving a single point around. Where do you need to place the
-point to affect the overall fit the most?</li>
-</ul>
+
 </div>
-<div id="find-polynomial-order" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> Find polynomial
-order</h2>
-<p>Paste the following in the “points” text area:</p>
-<pre><code>-0.250, 0.700
-0.400, 2.00
-3.00, 0.100
-0.800, 0.800
--2.88, 3.33
--2.67, 2.58
--2.51, 1.80
--2.00, -0.760
--1.43, -1.23
--0.560, -0.145
--0.830, -0.535
--0.635, 0.545
--0.515, -0.745
--1.16, -0.730
--2.16, 0.650
--1.91, 1.13
--2.57, 0.785
--2.73, 1.37
--0.110, 1.14
-0.265, 1.19
-0.265, 1.52
-0.955, 1.50
-1.38, 1.52
-1.84, 0.560
-1.93, 0.980
-2.64, -0.0400
-3.21, -0.355
-3.43, 0.185
-3.88, -0.310
-2.62, 0.740
-3.36, -0.940
-4.00, -1.15
-1.71, 1.52
-0.655, 1.13
-0.865, 1.97
-1.14, 2.43
-1.57, 1.95
-1.65, 2.57
-2.16, 2.57
-2.19, 2.12
--1.43, -0.325
--1.79, -0.385
--1.28, 0.380
--1.65, 0.650
-3.07, 1.64
-3.42, 1.17
-3.55, 0.740
--3.12, 1.86
--3.44, 2.93</code></pre>
-<p>Switch to “polynomial” fit and change the order of the polynomial.
-Which order looks like the best generalization? Why?</p>
-</div>
-<div id="manual-cross-validation" class="section level2" number="2.3">
-<h2><span class="header-section-number">2.3</span> Manual
-“cross-validation”</h2>
-<p>Paste the following as “points”:</p>
-<pre><code>0.318, 1.85
-0.800, 0.800
-2.97, -0.377
-1.92, -0.128
--7.14, -2.74
--6.24, -1.96
--4.25, 1.19
--1.87, 2.30
-3.67, 0.881</code></pre>
+
+
+<div id="neural-networks" class="section level2">
+<h2>Neural networks</h2>
 <ul>
-<li>Overall idea: you can remove one point by clicking on it, see how
-that affects the fit and the click again to put the point back at
-(almost) the same place</li>
-<li>Try a polynomial fit of order 3
+<li>Neural network is “just” another function
 <ul>
-<li>Which of the points produces the biggest change in fit when
-removed?</li>
+<li>Yo mama is “just” another function</li>
 </ul></li>
-<li>Now do the same for polynomial or order 2 and then for order 1
-(linear)
+<li>Refresh perceptron, backpropagation</li>
+<li><a href="ml_validation-tasks.html">Task 1</a></li>
+<li>Modern ideas for neural networks
 <ul>
-<li>Which of the points produces the biggest change in fit when removed
-now?</li>
+<li><a
+href="https://en.wikipedia.org/wiki/Rectifier_(neural_networks)">ReLU</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Autoencoder">Autoencoders</a>
+<ul>
+<li><a
+href="https://en.wikipedia.org/wiki/Weak_supervision#Semi-supervised_learning">Semi
+supervised learning</a>!</li>
 </ul></li>
-<li>Which of the fits seems to generalize best?</li>
+<li><a
+href="https://en.wikipedia.org/wiki/Convolutional_neural_network">Convolution</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Data_augmentation">Data
+augmentation</a></li>
+<li><a
+href="https://en.wikipedia.org/w/index.php?title=Dropout_(neural_networks)&amp;redirect=no">Dropout</a>
+(regularization more broadly)</li>
+</ul></li>
 </ul>
 </div>
+<div id="validation" class="section level2">
+<h2>Validation</h2>
+<ul>
+<li>Example with Stable diffusions “blue grass, green sky”</li>
+<li>Example with ChatGPT
+<ul>
+<li>“I pick 25 people at random. What is the probability that at least
+two were born on the same day of year?”</li>
+<li>“I pick 25 people at random. What is the probability that at least
+two were born in the same year?”</li>
+</ul></li>
+<li>Why is this happening?</li>
+<li>Note: ChatGPT improved in this substantially in the past year or
+so</li>
+<li>ChatGPT is at its a core a function from “the dialogue so far” to
+“probability distribution over next words”
+<ul>
+<li>Yo mama is at its core …</li>
+<li>There’s a lot of details missing here</li>
+</ul></li>
+<li>We don’t just want a function to pass through training points!
+<ul>
+<li>Overfitting!</li>
+<li>The goal is generalization</li>
+<li>Question: how can we check generalization?</li>
+</ul></li>
+<li>Validation
+<ul>
+<li>Internal validation
+<ul>
+<li>Crossvalidation</li>
+</ul></li>
+<li>External validation</li>
+</ul></li>
+<li>Back to simple functions
+<ul>
+<li>Refresher: lines, polynomials</li>
+</ul></li>
+<li><a href="ml_validation-tasks.html">Task 2</a></li>
+</ul>
 </div>
 
 

@@ -5,7 +5,7 @@ navbar:
     - text: "Home"
       href: index.html
     - text: "Lesson 2 - Tasks"
-      href: lesson2-tasks.html
+      href: ml_validation-tasks.html
 output_dir: docs
 include: ["*.html", "*.png"]
 exclude: ["R", "*.R", "*.Rmd", "DESCRIPTION", "NAMESPACE", "renv.lock", "LICENSE", "tests"]

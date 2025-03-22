@@ -11,7 +11,7 @@
 
 
 
-<title>Lesson 3 - Task materials</title>
+<title>Lesson 2 - Task materials</title>
 
 <script src="site_libs/header-attrs-2.26/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -246,7 +246,7 @@ $(document).ready(function () {
   <a href="index.html">Home</a>
 </li>
 <li>
-  <a href="lesson2-tasks.html">Lesson 2 - Tasks</a>
+  <a href="ml_validation-tasks.html">Lesson 2 - Tasks</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -260,82 +260,136 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Lesson 3 - Task materials</h1>
+<h1 class="title toc-ignore">Lesson 2 - Task materials</h1>
 
 </div>
 
 
-<div id="word-embeddings" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> Word embeddings</h1>
-<p>Go to <a href="http://195.113.43.46:3388/index.html"
-class="uri">http://195.113.43.46:3388/index.html</a> (won’t work outside
-Motol and available only for the class). Remember that extra results
-will only be visible in small font at the top of the frame.</p>
+<div id="neural-network-training" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Neural network
+training</h1>
+<p>Open the <a href="convnet_demo.html">neural network demo</a></p>
+<ol style="list-style-type: decimal">
+<li>Add points of various colours (Click vs. Shift + Click), see how it
+learns</li>
+<li>Find a pattern that is “nice” but that cannot be learned.</li>
+</ol>
+</div>
+<div id="fitting-and-overfitting" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Fitting and
+overfitting</h1>
+<p>We will use the demo app at <a
+href="https://codepen.io/oscarsaharoy/full/eYggrme"
+class="uri">https://codepen.io/oscarsaharoy/full/eYggrme</a></p>
+<p>The app tries to fit a function to data points you entered.</p>
+<p>You may:</p>
 <ul>
-<li>Note the inputs and results for later sharing!</li>
-<li>Try putting a couple medical terms into the “Get most similar”
-section. Anything suspicious?</li>
-<li>Let’s play with the “Word analogy” part (the three box with “X is to
-Y as Z is to …”.
+<li>Click on empty space to add a point</li>
+<li>Click on a point to remove a point</li>
+<li>Drag points to change their position</li>
+<li>Change the type of fit (we will focus on linear/polynomial)</li>
+</ul>
+<div id="when-line-is-not-enough" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> When line is not
+enough</h2>
 <ul>
-<li>Find a medical triplet that “works” (good analogy is high in the
-result list)</li>
-<li>Find a medical triplet that “fails”</li>
-</ul></li>
+<li>Start with the default “linear” fit and default dataset.</li>
+<li>Add/move a couple points, until you think the data is not well fit
+with a line.</li>
+<li>Switch to “polynomial” fit (keep the default order of the
+polynomial)</li>
+<li>Has the fit improved?</li>
+<li>Try moving a single point around. Where do you need to place the
+point to affect the overall fit the most?</li>
 </ul>
 </div>
-<div id="chatgpt-plays-mostly-nicely" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> ChatGPT plays (mostly)
-nicely</h1>
+<div id="find-polynomial-order" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Find polynomial
+order</h2>
+<p>Paste the following in the “points” text area:</p>
+<pre><code>-0.250, 0.700
+0.400, 2.00
+3.00, 0.100
+0.800, 0.800
+-2.88, 3.33
+-2.67, 2.58
+-2.51, 1.80
+-2.00, -0.760
+-1.43, -1.23
+-0.560, -0.145
+-0.830, -0.535
+-0.635, 0.545
+-0.515, -0.745
+-1.16, -0.730
+-2.16, 0.650
+-1.91, 1.13
+-2.57, 0.785
+-2.73, 1.37
+-0.110, 1.14
+0.265, 1.19
+0.265, 1.52
+0.955, 1.50
+1.38, 1.52
+1.84, 0.560
+1.93, 0.980
+2.64, -0.0400
+3.21, -0.355
+3.43, 0.185
+3.88, -0.310
+2.62, 0.740
+3.36, -0.940
+4.00, -1.15
+1.71, 1.52
+0.655, 1.13
+0.865, 1.97
+1.14, 2.43
+1.57, 1.95
+1.65, 2.57
+2.16, 2.57
+2.19, 2.12
+-1.43, -0.325
+-1.79, -0.385
+-1.28, 0.380
+-1.65, 0.650
+3.07, 1.64
+3.42, 1.17
+3.55, 0.740
+-3.12, 1.86
+-3.44, 2.93</code></pre>
+<p>Switch to “polynomial” fit and change the order of the polynomial.
+Which order looks like the best generalization? Why?</p>
+</div>
+<div id="manual-cross-validation" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Manual
+“cross-validation”</h2>
+<p>Paste the following as “points”:</p>
+<pre><code>0.318, 1.85
+0.800, 0.800
+2.97, -0.377
+1.92, -0.128
+-7.14, -2.74
+-6.24, -1.96
+-4.25, 1.19
+-1.87, 2.30
+3.67, 0.881</code></pre>
 <ul>
-<li>You’ll need to login to <a href="https://chat.openai.com/"
-class="uri">https://chat.openai.com/</a> and create an account, super
-sorry!</li>
-<li>For some subtasks, we’ll work with medical papers - you can find a
-lot of them at e.g. the website of <a
-href="https://www.nejm.org/">NEJM</a>, <a
-href="https://www.bmj.com/">BMJ</a> or <a
-href="https://journals.plos.org/plosmedicine/">PLoS Medicine</a>.</li>
-<li>Take a (part of) the abstract of a medical paper (e.g. from the
-website of NEJM, BMJ or PLoS Medicine) and ask ChatGPT to rewrite it
-without jargon / or so that a kid could understand it.</li>
-<li>Take an abstract of a paper and ask ChatGPT to propose several
-possible titles. How well do they match with the actual title?</li>
-<li>Ask ChatGPT to translate a paragraph from a medical paper into Czech
-(or other language you know).</li>
-<li>Experiment with couple of prompts like “Explain why X causes Y”.
-What X and Y get the most “interesting” result?
+<li>Overall idea: you can remove one point by clicking on it, see how
+that affects the fit and the click again to put the point back at
+(almost) the same place</li>
+<li>Try a polynomial fit of order 3
 <ul>
-<li>Test how the answers change with a different framing (“You are …..
-Explain …”)</li>
+<li>Which of the points produces the biggest change in fit when
+removed?</li>
 </ul></li>
-<li>Try to make ChatGPT say that vaccines cause autism without
-mentioning any pro-vaccine points.</li>
+<li>Now do the same for polynomial or order 2 and then for order 1
+(linear)
+<ul>
+<li>Which of the points produces the biggest change in fit when removed
+now?</li>
+</ul></li>
+<li>Which of the fits seems to generalize best?</li>
 </ul>
 </div>
-<div id="limits-of-chatgpt" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> Limits of ChatGPT</h1>
-<ul>
-<li>Make ChatGPT tell you the lyrics to a song (it might refuse to
-reproduce some because their copyrighted, find some which ChatGPT will
-be OK with providing).</li>
-<li>Make ChatGPT summarise a non-existent book by a well-known author
-(it will resist for some obvious cases, try hard!).</li>
-<li>Ask ChatGPT to remember something. Then ask it to summarise a piece
-of text. And then another. Finally ask it to recall.
-<ul>
-<li>How long can the text be before ChatGPT is unable to recall the
-information?
-<ul>
-<li>ChatGPT will not allow you to submit a single message that is too
-long, so you might need to post multiple long messages to make it
-forget.</li>
-</ul></li>
-<li>A good source of long texts to summarise - the research papers at <a
-href="https://journals.plos.org/plosmedicine/"
-class="uri">https://journals.plos.org/plosmedicine/</a></li>
-</ul></li>
-</ul>
 </div>
 
 

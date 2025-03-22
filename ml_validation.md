@@ -8,7 +8,7 @@ output: html_document
 - Neural network is "just" another function
   - Yo mama is "just" another function
 - Refresh perceptron, backpropagation
-- [Task 1](lesson2-tasks.html)
+- [Task 1](ml_validation-tasks.html)
 - Modern ideas for neural networks
    - [ReLU](https://en.wikipedia.org/wiki/Rectifier_(neural_networks))
    - [Autoencoders](https://en.wikipedia.org/wiki/Autoencoder)
@@ -39,4 +39,4 @@ output: html_document
   - External validation
 - Back to simple functions
   - Refresher: lines, polynomials
-- [Task 2](lesson2-tasks.html)
+- [Task 2](ml_validation-tasks.html)
