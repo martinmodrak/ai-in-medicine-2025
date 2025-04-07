@@ -11,7 +11,7 @@
 
 
 
-<title>Lesson 4 - Using ChatGPT for text mining</title>
+<title>Lesson 4 - Task materials</title>
 
 <script src="site_libs/header-attrs-2.26/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -246,7 +246,7 @@ $(document).ready(function () {
   <a href="index.html">Home</a>
 </li>
 <li>
-  <a href="llm1-tasks.html">Lesson 4 - Tasks</a>
+  <a href="llm-mining-tasks.html">Lesson 5 - Tasks</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -260,40 +260,53 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Lesson 4 - Using ChatGPT for text
-mining</h1>
+<h1 class="title toc-ignore">Lesson 4 - Task materials</h1>
 
 </div>
 
 
-<p>Most of the lesson was spent on playing with language models, so
-little content here.</p>
-<ul>
-<li>Review large language models</li>
-<li>Let’s get to tasks. You can work in pairs!</li>
-<li>Wrap up:
-<ul>
-<li>Language models are currently fickle</li>
-<li>Failure modes are non-intuitive
-<ul>
-<li>Will now advanced math concepts, but fail in hangman (šibenice)</li>
-</ul></li>
-</ul></li>
-<li>Air Canada had to pay for Chatbot’s promises (<a
-href="https://www.bbc.com/travel/article/20240222-air-canada-chatbot-misinformation-what-travellers-should-know"
-class="uri">https://www.bbc.com/travel/article/20240222-air-canada-chatbot-misinformation-what-travellers-should-know</a>)</li>
-<li>A personal rant on the inefficiency and wastefulness of the current
-approach - instead of pouring resources into feasible and helpful tasks
-(e.g. analysing medical records) most of the resources go to chase
-“artificial general intelligence” while making no profit and allowing so
-far only for primarily undesirable outcomes (e.g. better spam)
-<ul>
-<li>Let’s see if the hype is too heavy to produce a bubble similar to
-the Web 2.0 bubble. Note that web turned out later to be a
-transformational technology. But the initial hype was just too
-much.</li>
-</ul></li>
-</ul>
+<p>In the system at <a href="http://195.113.43.46:3388"
+class="uri">http://195.113.43.46:3388</a></p>
+<div id="direct-input" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Direct input</h1>
+<p>Záložka “Direct model input”</p>
+<ol style="list-style-type: decimal">
+<li><p>Upravte “system prompt” tak, aby model chybně počítal do
+tří.</p></li>
+<li><p>Upravte “system prompt” tak, aby model odpovídal v češtině i na
+anglické dotazy.</p></li>
+<li><p>Zkuste upravit “user prompt”” tak, aby model odpovídal jen
+anglicky</p></li>
+<li><p>“User input”: Napište medicínský dotaz. Změna system prompt tak
+aby a) odpověděl dobře b) odpověděl zábavný nesmysl</p></li>
+<li><p>Pohrajte si s parametrem “temperature”</p></li>
+</ol>
+</div>
+<div id="text-analysis---simple-data" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Text analysis - simple
+data</h1>
+<ol style="list-style-type: decimal">
+<li>Kdo má na sobě oblečení</li>
+<li>Kdo může mít více jak 4 potomky naráz</li>
+<li>Které jsou ženy</li>
+</ol>
+</div>
+<div id="text-analysis---medical-records-data" class="section level1"
+number="3">
+<h1><span class="header-section-number">3</span> Text analysis - medical
+records data</h1>
+<ol style="list-style-type: decimal">
+<li>Zjistit věk pacientů (formát: jen číslo)</li>
+<li>Kdo má psychické obtíže (jen „YES“, „NO“, nebo „CANNOT
+DETERMINE“)</li>
+<li>Kdo má změřen tep (heart rate/HR) a kolik (formát: buď „NOT
+MEASURED“ nebo „113“)</li>
+<li>Kdo bere léky na bolest a jaké (formát buď „NONE“ nebo „lék1,
+lék2“)</li>
+<li>Kdo má v rodině rakovinnou diagnózu (jen „YES“, „NO“, nebo „CANNOT
+DETERMINE“)</li>
+</ol>
+</div>
 
 
 

@@ -4,8 +4,8 @@ navbar:
   left:
     - text: "Home"
       href: index.html
-    - text: "Lesson 4 - Tasks"
-      href: llm1-tasks.html
+    - text: "Lesson 5 - Tasks"
+      href: llm-mining-tasks.html
 output_dir: docs
 include: ["*.html", "*.png"]
 exclude: ["R", "*.R", "*.Rmd", "DESCRIPTION", "NAMESPACE", "renv.lock", "LICENSE", "tests"]

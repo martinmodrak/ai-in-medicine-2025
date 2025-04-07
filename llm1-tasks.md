@@ -1,5 +1,5 @@
 ---
-title: "Lesson 3 - Task materials"
+title: "Lesson 4 - Task materials"
 output: 
   html_document:
     number_sections: true
@@ -14,6 +14,8 @@ Go to http://195.113.43.46:3388/index.html (won't work outside Motol and availab
 - Let's play with the "Word analogy" part (the three box with "X is to Y as Z is to ...".
   - Find a medical triplet that "works" (good analogy is high in the result list)
   - Find a medical triplet that "fails" 
+  
+<!-- Tyto embeddings nic moc -->
 
 # ChatGPT plays (mostly) nicely
 
