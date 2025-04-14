@@ -31,6 +31,7 @@ Všechny odpovědi ve formátu "YES/NO" nebo podobné.
 
 
 # Text analysis - medical records data
+<!-- TODO narazeli jsme na limit tokenu za minutu, obecne vyzaduje vice lasky -->
 
 1) Zjistit věk pacientů (formát: jen číslo) <!-- Odpověď viz ID -->
 2) Kdo má psychické obtíže (jen „YES“, „NO“, nebo „CANNOT DETERMINE“) <!-- woman-74-hydrocephalus možná, man-21-suicide, woman-35-manic -->
