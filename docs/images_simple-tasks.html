@@ -11,7 +11,7 @@
 
 
 
-<title>Lesson 5 - Task materials</title>
+<title>Lesson 6 - Task materials</title>
 
 <script src="site_libs/header-attrs-2.26/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -246,7 +246,7 @@ $(document).ready(function () {
   <a href="index.html">Home</a>
 </li>
 <li>
-  <a href="llm-mining-tasks.html">Lesson 5 - Tasks</a>
+  <a href="images_simple-tasks.html">Lesson 6 - Tasks</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -260,7 +260,7 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Lesson 5 - Task materials</h1>
+<h1 class="title toc-ignore">Lesson 6 - Task materials</h1>
 
 </div>
 
@@ -269,14 +269,15 @@ $(document).ready(function () {
 <h1><span class="header-section-number">1</span> Download data for
 lesson</h1>
 <ul>
-<li>Download everything from <a href="http://195.113.43.46:3388/"
-class="uri">http://195.113.43.46:3388/</a>
+<li>Download everything from <a
+href="http://195.113.43.46:3388/lesson6/"
+class="uri">http://195.113.43.46:3388/lesson6/</a>
 <ul>
 <li>File sources (for access from outside):
 <ul>
 <li>QuPath: <a
-href="https://github.com/qupath/qupath/releases/download/v0.5.1/QuPath-v0.5.1-Windows.zip"
-class="uri">https://github.com/qupath/qupath/releases/download/v0.5.1/QuPath-v0.5.1-Windows.zip</a></li>
+href="https://github.com/qupath/qupath/releases/download/v0.6.0-rc4/QuPath-v0.6.0-rc4-Windows.zip"
+class="uri">https://github.com/qupath/qupath/releases/download/v0.6.0-rc4/QuPath-v0.6.0-rc4-Windows.zip</a></li>
 <li>Ki67 Slide 1: <a
 href="https://openslide.cs.cmu.edu/download/openslide-testdata/Hamamatsu/OS-2.ndpi"
 class="uri">https://openslide.cs.cmu.edu/download/openslide-testdata/Hamamatsu/OS-2.ndpi</a></li>
@@ -291,6 +292,10 @@ class="uri">https://molecular.pathology.ufl.edu/2017/06/05/ki67-ihc-single-stain
 <div id="unpack-and-run-qupath" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> Unpack and run
 QuPath</h1>
+<ul>
+<li>If asked to create a user directory, allow it (with default
+settings)</li>
+</ul>
 </div>
 <div id="analyzing-first-ki-67-image" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Analyzing first Ki-67
@@ -300,29 +305,48 @@ image</h1>
 href="https://qupath.readthedocs.io/en/0.5/docs/tutorials/cell_detection.html"
 class="uri">https://qupath.readthedocs.io/en/0.5/docs/tutorials/cell_detection.html</a></p>
 <ul>
-<li>Open file “OS-2.tif” in QuPath</li>
-<li>Check Image (left pane) -&gt; Pixel width</li>
+<li>Open file “OS-2.tif” in QuPath
+<ul>
+<li>File -&gt; Open, choose the file</li>
+<li>Under “Set image type” Select “Brightfield H-DAB”</li>
+</ul></li>
+<li>Check Image (left pane) -&gt; Pixel width
+<ul>
+<li>Should be 0.2271μm (both width and height)</li>
+</ul></li>
 <li>View -&gt; Brightness + Contrast
 <ul>
 <li>Inspect channels/stains</li>
+<li>We’ll now work with the full image (“Original”)</li>
 </ul></li>
 <li>Draw a small-ish rectangle (“R” key or the rectangle icon on the
 main toolbar) - we want ~100-1000 cells in it</li>
 <li>Analyze -&gt; Cell detection -&gt; Positive cell detection
 <ul>
 <li>Run with default settings</li>
-</ul></li>
-<li>Draw a different small-ish rectangle
-<ul>
-<li>Run cell detection on “Detection image” = “Optical Density sum”</li>
+<li>Use the ‘D’ key to show/hide annotations</li>
+<li>Re-run positive cell detection with “Detection image” = “Optical
+Density sum”</li>
+<li>Note: when deleting annotations, you want to choose “No” when asked
+if to “Keep descendant objects”</li>
 </ul></li>
 <li>Tuning other parameters
 <ul>
-<li>Cell expansion</li>
-<li>Threshold 1</li>
+<li>Background radius (larger = allow larger nuclei)</li>
+<li>Cell expansion (how much space around nucleus is considered part of
+the cell)</li>
+<li>Threshold 1 (how much DAB stain is required to classify as
+positive)</li>
 </ul></li>
-<li>Analyze a larger region - hotspot</li>
-<li>Can use another region and see the percent positive</li>
+<li>Once we are happy with detection settings, analyze a larger region
+(should be the “hotspot” of the cancer)
+<ul>
+<li>Note: when deleting annotations (rectangles), you will be asked if
+you want to “Keep descendant objects”, you want to say “No” (so that
+annotated cells are deleted with rectangles)</li>
+</ul></li>
+<li>You can see the percent positive in the left pane, Annotations,
+bottom part</li>
 </ul>
 </div>
 <div id="analyze-a-ki-67-image-on-your-own" class="section level1"
@@ -332,17 +356,69 @@ on your own</h1>
 <ul>
 <li>Try the same set of steps for the file <code>Ki67_2.jpg</code><br />
 </li>
-<li>You’ll need to set the pixel size (both with and height) to 0.67um
+<li>You’ll need to set the pixel size (both with and height) to 0.67μm
 under “Image” in the left pane</li>
 </ul>
 </div>
-<div id="test-cellpose-on-ki-67" class="section level1" number="5">
-<h1><span class="header-section-number">5</span> Test cellpose on
-Ki-67</h1>
+<div id="test-the-instanseg-automatic-segmenter-on-ki-67"
+class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Test the InstanSeg
+automatic segmenter on Ki-67</h1>
 <ul>
-<li>File -&gt; Export snapshot -&gt; Current viewer content</li>
-<li><a href="https://www.cellpose.org/"
-class="uri">https://www.cellpose.org/</a></li>
+<li>InstanSeg is described at <a href="https://arxiv.org/pdf/2408.15954"
+class="uri">https://arxiv.org/pdf/2408.15954</a></li>
+<li>Install InstanSeg
+<ul>
+<li>Open “Extensions -&gt; Manage Extensions”
+<ul>
+<li>Find “QuPath InstanSeg extension v0.1.0-rc1”, click the green plus
+sign to install</li>
+</ul></li>
+<li>Open “Extensions -&gt; Deep Java Library -&gt; Manage DJL Engines”
+<ul>
+<li>Under “PyToch”, click “Check/Download”, once downloaded close the
+window</li>
+</ul></li>
+<li>You should now see “InstanSeg” under “Extensions”
+<ul>
+<li>If you don’t, then restart QuPath (save your changes)</li>
+</ul></li>
+</ul></li>
+<li>Try InstanSeg
+<ul>
+<li>Make a rectangle annotation overlapping your previous detections and
+select it</li>
+<li>Open “Extensions -&gt; InstanSeg -&gt; Run InstanSeg”
+<ul>
+<li>Allow checking for updates</li>
+<li>Click the directory icon near “Choose directory to store models”.
+<ul>
+<li>Choose the directory where you have your other data</li>
+</ul></li>
+<li>Select “brightfield-nuclei” under “Select a model”</li>
+<li>Make sure you have the correct rectangle selected (in yellow
+color)</li>
+<li>Click “Run”</li>
+</ul></li>
+<li>Compare the annotations to the nuclei annotations made manually
+<ul>
+<li>In the left pane, under “Annotations” and “Class list” you can hide
+some annotations — by default the new annotations from InstanSeg will be
+marked as “None” while the annotations done manually are classified as
+“Positive” or “Negative”
+<ul>
+<li>Note that the default InstanSeg model only selects nuclei.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Classify InstanSeg cells as Ki-67 positive
+<ul>
+<li>Delete manually annotated rectangles</li>
+<li>Choose “Classify -&gt; Object Classification -&gt; Set Cell
+Intensity Classification”</li>
+<li>Select “DAB: Mean” as the “Measurement”, pick a suitable
+threshold.</li>
+</ul></li>
 </ul>
 </div>
 
