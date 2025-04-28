@@ -1,10 +1,10 @@
 ---
-title: "Lesson 6 - Simple machine learning with histology slides"
+title: "Lesson 7 - Simple machine learning with histology slides"
 output: html_document
 ---
 
 
-- Get to downloading - [Task 1](lesson6-tasks.html) (may take a while)
+- Get to downloading - [Task 1](images_simple_ml-tasks.html) (may take a while)
 - Last time: very simple approaches
 - Show cell features in QuPath
 - How does a human classify? [Decision trees](https://en.wikipedia.org/wiki/Decision_tree)

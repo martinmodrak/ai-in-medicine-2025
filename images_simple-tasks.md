@@ -10,7 +10,8 @@ output:
 
 - Download everything from http://195.113.43.46:3388/lesson6/
   - File sources (for access from outside): 
-    - QuPath: https://github.com/qupath/qupath/releases/download/v0.6.0-rc4/QuPath-v0.6.0-rc4-Windows.zip
+    - QuPath: for Windows: https://github.com/qupath/qupath/releases/download/v0.6.0-rc4/QuPath-v0.6.0-rc4-Windows.zip
+      - For other systems see https://github.com/qupath/qupath/releases/tag/v0.6.0-rc4 
     - Ki67 Slide 1: https://openslide.cs.cmu.edu/download/openslide-testdata/Hamamatsu/OS-2.ndpi
     - Ki67 Slide 2 (small): https://molecular.pathology.ufl.edu/2017/06/05/ki67-ihc-single-stain-on-human-tumor-slide/
 - Save to a temporary folder (e.g. on Desktop)
@@ -79,7 +80,7 @@ We are mostly following the tutorial at:  https://qupath.readthedocs.io/en/0.5/d
       done manually are classified as "Positive" or "Negative"
         - Note that the default InstanSeg model only selects nuclei.
 - Classify InstanSeg cells as Ki-67 positive
-  - Delete manually annotated rectangles
+  - Delete manually annotated rectangles+
   - Choose "Classify -> Object Classification -> Set Cell Intensity Classification"
   - Select "DAB: Mean" as the "Measurement", pick a suitable threshold.
   

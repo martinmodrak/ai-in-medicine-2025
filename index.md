@@ -12,8 +12,8 @@ run so we'll see how things work out.
 - Lesson 4 - Building ChatGPT: [outline](llm1.html), [tasks](llm1-tasks.html)
 - Lesson 5 - Text mining with ChatGPT: [outline](llm-mining.html), [tasks](llm-mining-tasks.html)
 - Lesson 6 - Basics of "classical" image analysis: [outline](images_simple.html), [tasks](images_simple-tasks.html)
-- Lesson 7 - Simple machine learning with histology slides<!--: [outline](lesson6.html), [tasks](lesson6-tasks.html)-->
+- Lesson 7 - Simple machine learning with histology slides: [outline](images_simple_ml.html), [tasks](images_simple_ml-tasks.html)
 
 
 Credit will be given to anyone with at most 2 absences, who completes the final
-task. <!--(described within tasks for [Lesson 6](lesson6-tasks.html))-->
+task (described within tasks for [Lesson 7](images_simple_ml-tasks.html)).

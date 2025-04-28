@@ -246,7 +246,7 @@ $(document).ready(function () {
   <a href="index.html">Home</a>
 </li>
 <li>
-  <a href="images_simple-tasks.html">Lesson 6 - Tasks</a>
+  <a href="images_simple_ml-tasks.html">Final tasks</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -272,14 +272,21 @@ lesson</h1>
 <li>Download everything from <a href="http://195.113.43.46:3388/"
 class="uri">http://195.113.43.46:3388/</a>
 <ul>
-<li>This includes materials from previous lessons</li>
+<li>This includes materials from previous lesson (folder
+<code>lesson6</code>) and a new histology slide (under
+<code>lesson7</code>).</li>
 <li>File sources (for access from outside):
 <ul>
 <li>Same as previous lesson:
 <ul>
-<li>QuPath: <a
-href="https://github.com/qupath/qupath/releases/download/v0.5.1/QuPath-v0.5.1-Windows.zip"
-class="uri">https://github.com/qupath/qupath/releases/download/v0.5.1/QuPath-v0.5.1-Windows.zip</a></li>
+<li>QuPath: for Windows: <a
+href="https://github.com/qupath/qupath/releases/download/v0.6.0-rc4/QuPath-v0.6.0-rc4-Windows.zip"
+class="uri">https://github.com/qupath/qupath/releases/download/v0.6.0-rc4/QuPath-v0.6.0-rc4-Windows.zip</a>
+<ul>
+<li>For other systems see <a
+href="https://github.com/qupath/qupath/releases/tag/v0.6.0-rc4"
+class="uri">https://github.com/qupath/qupath/releases/tag/v0.6.0-rc4</a></li>
+</ul></li>
 <li>Ki67 Slide 1: <a
 href="https://openslide.cs.cmu.edu/download/openslide-testdata/Hamamatsu/OS-2.ndpi"
 class="uri">https://openslide.cs.cmu.edu/download/openslide-testdata/Hamamatsu/OS-2.ndpi</a></li>
@@ -306,21 +313,53 @@ together</h1>
 href="https://qupath.readthedocs.io/en/0.5/docs/tutorials/cell_classification.html"
 class="uri">https://qupath.readthedocs.io/en/0.5/docs/tutorials/cell_classification.html</a></p>
 <ul>
-<li>Open OS-2.ndpi</li>
-<li>Detect cells</li>
+<li>Open “OS-2.tif” in QuPath
+<ul>
+<li>File -&gt; Open, choose the file</li>
+<li>Under “Set image type” Select “Brightfield H-DAB”</li>
+</ul></li>
+<li>Detect cells
+<ul>
+<li>This is the same as we did in <a href="images_simple-tasks.html">the
+tasks for previous lesson</a>, but we don’t need “Positive cell
+detection” and “Cell detection” alone is enough (using “Poistive cell
+detection” will also work, but will be a bit more messy to work look
+at).</li>
+</ul></li>
+<li>Manually inspect cell information
+<ul>
 <li>Measure -&gt; show measurements maps
 <ul>
 <li>Nucleus/cell area ratio (filter!)</li>
-<li>Adjust max!</li>
+<li>Lower the maximum value (lower slider) to better highlight</li>
 </ul></li>
-<li>Analyze -&gt; Calculate features -&gt; Add smoothed features</li>
-<li>Annotate regions</li>
+<li>But those measurements itself are not enough</li>
+</ul></li>
+<li>Add information about neighbourhood
+<ul>
+<li>Analyze -&gt; Calculate features -&gt; Add smoothed features (keep
+the default 25μm radius)</li>
+</ul></li>
+<li>Annotate regions as tumor/stroma
+<ul>
+<li>The Brush tool <img
+src="https://qupath.readthedocs.io/en/0.5/_images/BRUSH_TOOL.png"
+alt="brush tool" /> is probably the best</li>
+<li>Right-click region -&gt; Set classification -&gt; Tumour OR
+Stroma</li>
+</ul></li>
 <li>Classify -&gt; Object classification -&gt; Train object classifier
 <ul>
 <li>Live update</li>
+<li>If you see incorrect classifications, add annotations to improve
+training</li>
 </ul></li>
+<li>Optional: classify tumor cells as positive/negative
+<ul>
 <li>Classify ‣ Object classification ‣ Set cell intensity
 classifications.</li>
+<li>Choose “DAB OD mean” for “Measurement”</li>
+</ul></li>
 </ul>
 </div>
 <div id="final-task-for-credit" class="section level1" number="4">
@@ -329,28 +368,52 @@ credit)</h1>
 <p><strong>Important:</strong> Start with creating a new project. This
 will let you send the results needed to get credit.</p>
 <p>Evaluating the presence of cancer-testis antigens in multiple tissue
-samples.</p>
-<p>The original study is at <a
+samples. The original study is at <a
 href="https://europepmc.org/article/MED/37341056#mol213474-sec-0007"
 class="uri">https://europepmc.org/article/MED/37341056#mol213474-sec-0007</a>
 (for interest only, not needed for the task)</p>
-<p>Import file <code>MAGEA4_(CAB040535)_25000_BOMI2_slide1.svs</code>
-into the QuPath project (drag onto the window or File -&gt; Open).</p>
-<p>There are many samples in the same file, we will focus on the
-top-left cores (the first 4 in the first row).</p>
-<p>Run cell detection for a couple areas. The default settings will tend
-to detect too many cells due to the relatively low resolution of the
-image. You will want to increase smoothing via “Median filter radius”
-and “Sigma” options. You may also need to change the “Background radius”
-setting to allow for larger cells.</p>
-<p>Once you are happy with the result, store (e.g. screenshot, or just
-write down) your final cell detection parameters!</p>
-<p>Train a classifier to distinguish between the two cell populations
-shown below - you can use Positive/Negative classes (or add your own in
-the Annotations card in the left pane and the “…” button below the class
-list).</p>
+<ul>
+<li><p>Import file
+<code>MAGEA4_(CAB040535)_25000_BOMI2_slide1.svs</code> into the QuPath
+project (drag onto the window or File -&gt; Open).</p></li>
+<li><p>There are many samples in the same file, we will focus on the
+top-left cores (the first 4 in the first row).</p></li>
+<li><p>Run cell detection for a couple areas. The default settings will
+tend to detect too many cells due to the relatively low resolution of
+the image. You will want to increase smoothing via “Median filter
+radius” and “Sigma” options. You may also need to change the “Background
+radius” setting to allow for larger cells.</p>
+<ul>
+<li>If you have it working from previous lesson, you can also try
+InstanSeg and see if it is sufficient</li>
+</ul></li>
+<li><p>Once you are happy with the result, store (e.g. screenshot, or
+just write down) your final cell detection parameters!</p></li>
+<li><p>Train a classifier to distinguish between the two cell
+populations shown below - you can use Tumor/Stroma classes (or add your
+own in the Annotations card in the left pane and the “…” button below
+the class list).</p></li>
+</ul>
 <p><img src="populations-final-task.png" /></p>
-<p>Save the classifier.</p>
+<ul>
+<li>Once the classifier works good on one sample, detect cells at
+another sample (with the same detection method and settings!)
+<ul>
+<li>If you used “Analyze -&gt; Calculate features -&gt; Add smooth
+features” previously, you need to rerun it for the new region</li>
+<li>Does it work well also here?</li>
+<li>If not, add annotations on the new sample</li>
+<li>Once it works nice on both sample, try on yet another samples.
+<ul>
+<li>This is kind of cross validation</li>
+</ul></li>
+</ul></li>
+<li>Save the classifier
+<ul>
+<li>In the “Train object classifier” window, enter “classifier name” at
+the bottom and click “Save”</li>
+</ul></li>
+</ul>
 <p>To get credit at the lesson, show your results to lecturer. Outside
 of the class, send: your cell detection parameters (screenshot is fine)
 and the classifier file (found under
