@@ -1,5 +1,5 @@
 ---
-title: "Lesson 6 - Task materials"
+title: "Lesson 7 - Task materials"
 output: 
   html_document:
     number_sections: true
